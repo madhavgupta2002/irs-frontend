@@ -1,0 +1,6 @@
+username: elastic
+apikey (myAPI): ==
+
+export ES_URL="https://860fff9adba14721ba4c7834874e2cbf.us-central1.gcp.cloud.es.io:443"
+export API_KEY="VHZIei1ZMEI2TXRoZmxFSEgwOEk6VjFiRWY3SWdUZWVKWV9vZjR5eXVKZw"
+
