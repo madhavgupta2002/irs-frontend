@@ -25,25 +25,36 @@ const SearchResult = () => {
             setResult(res);
         });
     }
-    if(!result) return;
-    return (
-        <div className="flex flex-col min-h-[100vh]">
-            <SearchResultHeader />
-            <main className="grow p-[12px] pb-0 md:pr-5 md:pl-20">
-                <div className="flex text-sm text-[#70757a] mb-3">
-                    {/* {`About ${searchInformation.formattedTotalResults} results in ${searchInformation.formattedSearchTime} seconds`} */}
-                </div> 
-                { (<>
-                    {result.map((item,index)=>(
-                        <SearchedItemTemplate key={index} data={item} />
-                    ))}
-                </>)
-                }
-                {/* <Pagination queries={queries}/> */}
-            </main> 
-            <Footer/>
-        </div>
-    );
-};
+    if (!result) {
+        return (
+            <div className="flex flex-col min-h-[100vh]">
+                <SearchResultHeader />
+                 <div>Loading...</div>
+                <Footer/>
+            </div>
+        );
+        }
+        return (
+            <div className="flex flex-col min-h-[100vh]">
+                <SearchResultHeader />
+                <main className="grow p-[12px] pb-0 md:pr-5 md:pl-20">
+                    <div className="flex text-sm text-[#70757a] mb-3">
+                        {/* {`About ${searchInformation.formattedTotalResults} results in ${searchInformation.formattedSearchTime} seconds`} */}
+                    </div> 
+                    {result.length === 0 ? (
+                        <div>No results found</div>
+                    ) : (
+                        <>
+                            {result.map((item,index)=>(
+                                <SearchedItemTemplate key={index} data={item} />
+                            ))}
+                        </>
+                    )}
+                    {/* <Pagination queries={queries}/> */}
+                </main> 
+                <Footer/>
+            </div>
+        );
+        };
 
 export default SearchResult;
