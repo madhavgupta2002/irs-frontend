@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useContext, useState, useEffect } from "react";
 
-import Logo from "../assets/google-logo.png";
+import Logo from "../assets/search-logo.png";
 import SearchInput from "./SearchInput";
 import ProfileIcon from "./ProfileIcon";
 import { Context } from "../utils/ContextApi";
