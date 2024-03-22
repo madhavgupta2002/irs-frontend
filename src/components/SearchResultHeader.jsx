@@ -9,14 +9,10 @@ import { menu } from "../utils/Constants";
 
 const SearchResultHeader = () => {
   const [selectedItem, setSelectedItem] = useState("All");
-  const { setImageSearch } = useContext(Context);
-  useEffect(() => {
-    return () => setImageSearch(false);
-  }, []);
+
   const clickHandler = (menuItem) => {
     let isTypedImages = menuItem.name === "Images";
     setSelectedItem(menuItem.name);
-    setImageSearch(isTypedImages ? true : false);
   };
   return (
     <div className="p-[15px] pb-0 md:pr-5 md:pl-20 md:pt-7 border-b border-[#ebebeb] flex md:block flex-col items-center stick top-0">

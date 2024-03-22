@@ -69,8 +69,6 @@ async function index()
       // Add more entries if needed
     ];
     
-
-
       const result = await client.helpers.bulk({
         datasource: dataa,
         pipeline: "ent-search-generic-ingestion",
