@@ -4,7 +4,6 @@ import { fetchDataFromApi } from "../utils/apiNew";
 import SearchResultHeader from "./SearchResultHeader";
 import Footer from "./Footer";
 import SearchedItemTemplate from "./SearchedItemTemplate";
-import Pagination from "./Pagination";
 
 const SearchResult = () => {
     const [result, setResult] = useState(null);
