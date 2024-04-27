@@ -3,16 +3,23 @@ import { AiOutlineSearch } from "react-icons/ai";
 import { IoMdClose } from "react-icons/io";
 import { useNavigate, useParams } from "react-router-dom";
 
-
 const SearchInput = () => {
-  const {query} =useParams();
+  const { query } = useParams();
   const [searchQuery, setSearchQuery] = useState(query || "");
   const navigate = useNavigate();
+
   const searchQueryHandler = (event) => {
-    if (event.key == "Enter" && searchQuery.length > 0) {
+    if (event.key === "Enter" && searchQuery.length > 0) {
       navigate(`/${searchQuery}/${1}`);
     }
   };
+
+  const handleSearch = () => {
+    if (searchQuery.length > 0) {
+      navigate(`/${searchQuery}/${1}`);
+    }
+  };
+
   return (
     <div
       id="searchBox"
@@ -36,6 +43,12 @@ const SearchInput = () => {
             onClick={() => setSearchQuery("")}
           />
         )}
+        <button
+          onClick={handleSearch}
+          className="h-9 px-4 bg-[#f8f9fa] text-sm rounded-md border-[#f8f9fa] hover:border-[#dadce0] hover:shadow-c2"
+        >
+          Search
+        </button>
       </div>
     </div>
   );
