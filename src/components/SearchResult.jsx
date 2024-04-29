@@ -4,6 +4,8 @@ import { fetchDataFromApi } from "../utils/apiNew";
 import SearchResultHeader from "./SearchResultHeader";
 import Footer from "./Footer";
 import SearchedItemTemplate from "./SearchedItemTemplate";
+import Skeleton from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
 
 const SearchResult = () => {
     const [result, setResult] = useState(null);
@@ -32,7 +34,15 @@ const SearchResult = () => {
         return (
             <div className="flex flex-col min-h-[100vh]">
                 <SearchResultHeader />
-                <div>Loading...</div>
+                <div style={{ marginRight: '700px', marginLeft: '50px', marginTop: '20px', marginBlock: '30px' }}>
+                    <Skeleton count={5} />
+                    <br />
+                    <Skeleton count={5} />
+                    <br />
+                    <Skeleton count={5} />
+                    <br />
+                    <Skeleton count={5} />
+                </div>
                 <Footer />
             </div>
         );
